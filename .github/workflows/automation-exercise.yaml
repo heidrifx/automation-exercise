@@ -1,10 +1,10 @@
-name: Automation Exercise
+name: SSE CI/CD
 
 on: [push]
 
 jobs:
   style_check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -19,7 +19,7 @@ jobs:
         run: black --check .
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -42,7 +42,7 @@ jobs:
           include-hidden-files: true
 
   coverage_report:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     needs: test
 
